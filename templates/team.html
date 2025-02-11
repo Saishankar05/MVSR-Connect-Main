@@ -1,0 +1,84 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% tailwind_css %}
+    <link rel="stylesheet" href="input.css">
+</head>
+<body class="bg-blue-950 scrollbar-none">
+    <div class="flex  flex-wrap p-4 my-4">
+        <div class=" w-full lg:w-3/4">
+            <div class="w-full">
+                <div><h1 class="text-xl sm:text-3xl md:text-4xl font-averia text-white">Title:Annual Report generator</h1></div>
+                <div><h1 class="text-xl sm:text-3xl md:text-4xl font-averia text-white">BatchNo: C8</h1></div>
+            </div>
+            <h1 class="my-3 text-white sm:text-xs md:text-xl font-averia">Batch Members</h1>
+            <div class="w-full lg:w-1/4 border-2 border-yellow-300 rounded-sm min-w-[150px]">
+                <div class="flex bg-white w-full p-2 gap-2 items-center">
+                    <div class="bg-blue-900 text-white text-[20px] w-10 h-10 flex justify-center align-middle rounded-full p-1 ">
+                        <h1>R</h1>
+                    </div>
+                    <div class="font-averia text-xl">A.Narasimha</div>
+                </div>
+                <hr class="border-1 border-blue-800">
+                <div class="flex bg-white w-full p-2 gap-2 items-center">
+                    <div class="bg-blue-900 text-white text-[20px] w-10 h-10 flex justify-center align-middle rounded-full p-1 ">
+                        <h1>B</h1>
+                    </div>
+                    <div class="font-averia text-xl">B.Neeraj Kumar</div>
+                </div>
+                <hr class="border-1 border-blue-800">
+                <div class="flex bg-white w-full p-2 gap-2 items-center">
+                    <div class="bg-blue-900 text-white text-[20px] w-10 h-10 flex justify-center align-middle rounded-full p-1 ">
+                        <h1>K</h1>
+                    </div>
+                    <div class="font-averia text-xl">K.Nithin Reddy</div>
+                </div>
+            </div>
+            <h1 class="my-3 text-white sm:text-xs md:text-xl font-averia">Batch Guide</h1>
+            <div class="flex bg-white w-full lg:w-1/4 border border-yellow-300 p-2 gap-2 items-center min-w-[150px]">
+                <div class="bg-blue-900  text-white text-[20px] w-10 h-10 flex justify-center align-middle rounded-full p-1 ">
+                    <h1>R</h1>
+                </div>
+                <div class="font-averia text-xl">A.Narasimha</div>
+            </div>
+            <h1 class="my-5 text-xl text-white">Description</h1>
+            <div class=" w-full lg:w-3/4 h-1/4">
+                <p class="text-white font-averia">
+                    The project aims to design and develop a user-friendly, efficient, and robust portal that simplifies the
+                    preparation of annual reports for educational institutions. The proposed portal will facilitate the
+                    seamless collection, integration, analysis, and visualization of data from multiple departments. Key
+                    features will include secure user authentication with role-based access control, support for diverse data
+                    sources and manual entry, advanced analytical tools, customizable dashboards, and automated report
+                    generation in various formats. The portal will also support collaboration, feedback collection, and adhere
+                    to relevant educational and data privacy standards. By streamlining these processes, the portal seeks to
+                    enhance accuracy, reduce manual effort, and provide valuable insights, ultimately aiding institutions in
+                    effectively communicating their achievements and growth.
+                </p>
+            </div>
+        </div>
+        <div class=" w-full flex flex-col lg:w-1/4 p-4 justify-between gap-2">
+            <div class="flex flex-col gap-3">
+                <div class="flex w-3/4 bg-white p-4 mx-auto items-center justify-between">
+                    <a href="#" class="font-averia text-2xl">Abstract</a>
+                    <a href="#"><img src="icons8-download-52.png" class="h-8 w-8"></a>
+                </div>
+                <div class="flex w-3/4 bg-white p-4 mx-auto items-center justify-between">
+                    <a href="#" class="font-averia text-2xl">Design</a>
+                    <a href="#"><img src="icons8-download-52.png" class="h-8 w-8"></a>
+                </div>
+                <div class="flex w-3/4 bg-white p-4 mx-auto items-center justify-between">
+                    <a href="#" class="font-averia text-2xl">Report</a>
+                    <a href="#"><img src="icons8-download-52.png" class="h-8 w-8"></a>
+                </div>
+            </div> 
+            <div class="w-3/4  bg-gray-600 mx-auto p-4 text-center font-averia text-2xl">
+                <a href="#">Evaluate</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
