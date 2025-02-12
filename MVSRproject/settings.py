@@ -42,7 +42,13 @@ INSTALLED_APPS = [
     'tailwind',
     'MVSRTheme',
     'app',
+    'rest_framework',
 ]
+
+
+ADZUNA_APP_ID = 'b2288abd'  # Get from developer.adzuna.com
+ADZUNA_API_KEY = 'bf9fd0d2e8730e1456b11ad967e06df1'
+
 
 TAILWIND_APP_NAME = 'MVSRTheme'
 MIDDLEWARE = [

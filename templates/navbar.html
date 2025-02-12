@@ -1,0 +1,27 @@
+
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% tailwind_css %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'input.css' %}">
+    <title>{% block title %}MVSR Connect{% endblock %}</title>
+</head>
+<body>
+    <div>
+        <nav class="bg-blue-950 w-4/4 h-auto px-3 py-3 flex justify-between items-center">
+            <h1 class="text-xl sm:text-yellow-500 sm:font-bold md:text-xl md:font-bold md:text-yellow-500 lg:text-2xl lg:text-yellow-500 lg:font-bold">MVSR Connect</h1>
+            <div class="flex gap-1">
+                <a href="#" class="bg-yellow-500 sm:py-1 sm:px-2 sm:font-bold sm:rounded-sm md:rounded-sm md:px-3 md:py-2 md:font-bold lg:rounded-sm lg:py-2 lg:px-6 lg:font-bold">Projects</a>
+                <a href="#" class="bg-yellow-500 sm:py-1 sm:px-2 sm:font-bold sm:rounded-sm md:rounded-sm md:px-3 md:py-2 md:font-bold lg:rounded-sm lg:py-2 lg:px-6 lg:font-bold">245121737162</a>
+            </div>
+        </nav>
+    </div>
+
+    {% block content %}
+    <!-- Child template content goes here -->
+    {% endblock %}
+</body>
+</html>

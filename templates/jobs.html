@@ -8,7 +8,91 @@
     <title>Document</title>
     <link rel="stylesheet" href="input.css">
 </head>
-<body>
+<body class="bg-blue-950">
+
+
+
+<div class="p-4">
+    <h1 class="text-xl font-averia mb-4 text-yellow-500">Software Jobs in India</h1>
+    <div class="flex flex-wrap w-full" id="jobsContainer">
+        <!-- Jobs will be populated here dynamically -->
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    fetchJobs();
+});
+
+function fetchJobs() {
+    fetch('/api/jobs/')
+        .then(response => response.json())
+        .then(data => {
+            const jobsContainer = document.getElementById('jobsContainer');
+            jobsContainer.innerHTML = '';
+            
+            data.forEach(job => {
+                const jobCard = createJobCard(job);
+                jobsContainer.appendChild(jobCard);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function createJobCard(job) {
+    const jobDiv = document.createElement('div');
+    jobDiv.className = 'border-2 border-yellow-200 rounded-sm m-5 flex-1 min-w-[300px] max-w-[400px] h-auto';
+    
+    const postedDate = new Date(job.posted_date).toLocaleDateString();
+    
+    jobDiv.innerHTML = `
+        <div class="bg-blue-400 flex p-5">
+            <div class="bg-blue-900 text-white text-[20px] w-10 h-10 flex justify-center align-middle rounded-full p-1">
+                <h1>${job.company[0]}</h1>
+            </div>
+            <div class="text-black pl-4">
+                <h1 class="font-averia">${job.company}</h1>
+                <p class="text-[10px] font-averia">${postedDate}</p>
+            </div>
+        </div>
+        <div class="bg-white p-4">
+            <div class="flex w-full">
+                <div class="bg-yellow-500 p-2 w-1/2 font-averia">
+                    <h1 class="text-center">Job Title:</h1>
+                </div>
+                <div class="bg-gray-200 p-2 w-full font-averia">
+                    <h1 class="text-center">${job.title}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white p-4">
+            <div class="flex w-full">
+                <div class="bg-yellow-500 p-2 w-1/2 font-averia">
+                    <h1 class="text-center">Location:</h1>
+                </div>
+                <div class="bg-gray-200 p-2 w-full font-averia">
+                    <h1 class="text-center">${job.location}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white p-4">
+            <div class="flex w-full">
+                <div class="bg-yellow-500 p-2 w-1/2 font-averia">
+                    <h1 class="text-center">Description:</h1>
+                </div>
+                <div class="bg-gray-200 p-2 w-full font-averia overflow-auto">
+                    <p class="text-sm p-2">${job.description.substring(0, 150)}...</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex bg-white p-4 justify-end">
+            <a href="${job.url}" target="_blank" class="bg-blue-900 text-white font-averia p-2">Apply for Job</a>
+        </div>
+    `;
+    
+    return jobDiv;
+}
+</script>
 
 </body>
 
